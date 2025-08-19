@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LAPTOP-DTKDJMOS.Traffic_DW"
+  DTS:DTSID="{A17DB085-BCC1-4A4D-9551-DC7866B79F4F}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=LAPTOP-DTKDJMOS;Initial Catalog=Traffic_DW;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-traffic-warehouse-project-{A17DB085-BCC1-4A4D-9551-DC7866B79F4F}LAPTOP-DTKDJMOS.Traffic_DW;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

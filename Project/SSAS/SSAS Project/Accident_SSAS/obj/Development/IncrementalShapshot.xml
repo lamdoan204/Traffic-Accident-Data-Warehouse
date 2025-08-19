@@ -1,0 +1,124 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>Accident_SSAS</Database>
+    <Server>ANKHONGGO\ANKHONGGO</Server>
+    <ConnectionString>Data Source=ANKHONGGO\ANKHONGGO;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>tOJ535a3tHeNwKcsG5JqTd8t5wk=14/05/2025 4:02:59 CH14/05/2025 4:02:59 CH</TimeStamp>
+        <ID>
+          <String>Traffic Accidents DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>ppNccrcjbgAXx6sLN4z1hqYH+s8=21/05/2025 4:49:15 CH17/05/2025 10:28:52 CH</TimeStamp>
+        <ID>
+          <String>Traffic Accidents DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>32n2JL0ghgYDnwPYqwf24nlghPI=17/05/2025 10:32:24 CH17/05/2025 10:29:26 CH</TimeStamp>
+        <ID>
+          <String>Dim Lighting</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>0LSwBHG5+tM5wwj946+z88ganb8=17/05/2025 10:32:24 CH17/05/2025 10:29:26 CH</TimeStamp>
+        <ID>
+          <String>Dim Road Way Surface</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>shySrTIyUXWY3slt0dHdoPcF2k0=17/05/2025 10:32:24 CH17/05/2025 10:29:26 CH</TimeStamp>
+        <ID>
+          <String>Dim Road Way Defect</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>6eaAljmSzeT5tb+NNVk0HtfRFoU=17/05/2025 10:32:24 CH17/05/2025 10:29:26 CH</TimeStamp>
+        <ID>
+          <String>Dim Traffic Control Device</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>wSN3S5+Rp95tK9vbDcZb+eHhmOQ=17/05/2025 10:32:24 CH17/05/2025 10:29:26 CH</TimeStamp>
+        <ID>
+          <String>Dim Crash Type</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>A6bjEjtlci1/wKyxGoZ0W8fE6Kw=17/05/2025 10:32:39 CH17/05/2025 10:29:26 CH</TimeStamp>
+        <ID>
+          <String>Dim Alignment</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Cl3CuZV5DipYV8GimSmUBagD6uE=17/05/2025 10:32:24 CH17/05/2025 10:29:26 CH</TimeStamp>
+        <ID>
+          <String>Dim Traffic Way Type</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>bCW3df3y0lH7UtmO66SNUJPm0u4=17/05/2025 10:32:24 CH17/05/2025 10:29:26 CH</TimeStamp>
+        <ID>
+          <String>Dim Contributory Cause</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>9ccRsO8U5SSTkb4eANh5K4FpPN0=17/05/2025 10:31:26 CH17/05/2025 10:29:26 CH</TimeStamp>
+        <ID>
+          <String>Dim Weather</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>6cqPeb+SXsSmgZ72VyCoA6Au3Pc=21/05/2025 5:47:40 CH17/05/2025 10:29:26 CH</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>2+kSEETzIWYNzVVFsKIRZFMtK3E=21/05/2025 5:47:40 CH17/05/2025 10:29:26 CHf850Kdkw7UIw4M5EDu9b/ccKzaU=19/05/2025 9:54:44 CH17/05/2025 10:29:26 CH</TimeStamp>
+        <ID>
+          <String>Traffic Accidents DW</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>WZxKd8yJB3tB+HNM7bbUX5MjS7Y=14/05/2025 3:02:28 CH14/05/2025 3:02:28 CH</TimeStamp>
+      <ID>
+        <String>Accident_SSAS</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-05-21T10:48:06.073333Z</LastDeployed>
+</DeploymentSnapshot>

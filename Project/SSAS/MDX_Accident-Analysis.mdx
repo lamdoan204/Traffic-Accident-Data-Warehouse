@@ -1,0 +1,153 @@
+﻿
+-- 1. Tổng số vụ tai nạn theo thời gian 
+---Năm nào xảy ra nhiều vụ tai nạn nhất?
+---Số vụ tai nạn qua các năm có xu hướng tăng hay giảm?
+SELECT 
+    { [Measures].[Tổng số vụ tai nạn - Fact Time] } ON COLUMNS,
+    { [Dim Date].[Year].[Year].MEMBERS } ON ROWS
+FROM [Traffic Accidents DW]
+
+--- Tháng nào xảy ra nhiều vụ tai nạn nhất?
+---Tai nạn thường tăng vào mùa nào trong năm?
+SELECT
+    { [Measures].[Tổng số vụ tai nạn - Fact Time] } ON COLUMNS,
+    { [Dim Date].[Month].[Month].MEMBERS } ON ROWS
+FROM [Traffic Accidents DW]
+
+--- Ngày nào trong tuần xảy ra nhiều tai nạn nhất?
+SELECT 
+    { [Measures].[Tổng số vụ tai nạn - Fact Time] } ON COLUMNS,
+    { [Dim Date].[Day Of Week].[Day Of Week].MEMBERS } ON ROWS
+FROM [Traffic Accidents DW]
+
+--- Giờ nào trong ngày xảy ra nhiều vụ tai nạn nhất?
+SELECT 
+  [Dim Date].[Hour].[Hour].MEMBERS ON ROWS,
+  [Measures].[Tổng số vụ tai nạn - Fact Time] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+--- Số vụ tai nạn theo Năm,tháng,ngày, giờ theo phân cấp
+SELECT
+	[Dim Date].[DateHierarchy].MEMBERS ON ROWS,
+	[Measures].[Tổng số vụ tai nạn - Fact Time] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+---- Thời tiết nào gây tai nạn nhiều nhất?
+SELECT 
+  [Dim Weather].[Weather].[Weather].MEMBERS ON ROWS,
+  [Measures].[Tổng số vụ tai nạn - Fact Cause] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+
+--- Nguyên nhân nào xảy ra tai nạn nhiều nhất?
+SELECT 
+  [Dim Contributory Cause].[Prim Contributory Cause].[Prim Contributory Cause].MEMBERS ON ROWS,
+  [Measures].[Tổng số vụ tai nạn - Fact Cause] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+--- Ánh sáng có ảnh hưởng đến các vụ tai nạn không?
+
+SELECT 
+  [Dim Lighting].[Lighting].[Lighting].MEMBERS ON ROWS,
+  [Measures].[Tổng số vụ tai nạn - Fact Cause] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+
+--- Loại đường có ảnh hưởng đến các vụ tai nạn không?
+SELECT 
+  [Dim Road Way Defect].[Road Way Defect].[Road Way Defect].MEMBERS ON ROWS,
+  [Measures].[Tổng số vụ tai nạn - Fact Cause] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+
+--- Số tai nạn phổ biến là loại va chạm nào?
+
+SELECT 
+  [Dim Crash Type].[Crash Type].[Crash Type].MEMBERS ON ROWS,
+  [Measures].[Tổng số vụ tai nạn - Fact Cause] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+--- Loại đường có ảnh hưởng lớn đến các vụ tai nạn không?
+SELECT 
+  [Dim Traffic Way Type].[Traffic Way Type].[Traffic Way Type].MEMBERS ON ROWS,
+  [Measures].[Tổng số vụ tai nạn - Fact Cause] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+--- Mặt đường có ảnh hưởng gì lớn đến các vụ tai nạn hay không?
+SELECT 
+  [Dim Road Way Surface].[Road Way Surface].[Road Way Surface].MEMBERS ON ROWS,
+  [Measures].[Tổng số vụ tai nạn - Fact Cause] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+--- Các tai nạn xảy ra ở hướng đường nào?
+SELECT 
+  [Dim Alignment].[Alignment].[Alignment].MEMBERS ON ROWS,
+  [Measures].[Tổng số vụ tai nạn - Fact Cause] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+--- Các vụ tai nạn xảy ra nhiều nhất khi thiết bị nào điều khiển giao thông?
+SELECT 
+  [Dim Traffic Control Device].[Traffic Control Divice].[Traffic Control Divice].MEMBERS ON ROWS,
+  [Measures].[Tổng số vụ tai nạn - Fact Cause] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+---Loại va chạm nào gây ra số người Bị thương nhiều nhất?
+SELECT 
+  [Dim Crash Type].[Crash Type].[Crash Type].MEMBERS ON ROWS,
+  [Measures].[Injuries Total] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+--- Loại va chạm nào gây ra số người tử vong nhiều nhất?
+
+SELECT 
+  [Dim Crash Type].[Crash Type].[Crash Type].MEMBERS ON ROWS,
+  [Measures].[Injuries Fatal] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+--- Số lượng phương tiện trong mỗi vụ tai nạn có ảnh hưởng đến mức độ nghiêm trọng không?
+SELECT 
+  [Measures].[Number Units] ON COLUMNS,
+  [Dim Crash Type].[Crash Type].[Crash Type].MEMBERS ON ROWS
+FROM [Traffic Accidents DW]
+
+---Trong điều kiện mặt đường trơn + ban đêm, số vụ tai nạn có cao hơn không?
+SELECT
+  [Measures].[Tổng số vụ tai nạn - Fact Cause] ON COLUMNS,
+  NON EMPTY (
+    [Dim Road Way Surface].[Road Way Surface].[Road Way Surface].MEMBERS *
+    [Dim Lighting].[Lighting].[Lighting].MEMBERS
+  ) ON ROWS
+FROM [Traffic Accidents DW]
+
+--- Giờ nào xảy ra nhiều tai nạn chết người nhất?
+SELECT 
+  [Dim Date].[Hour].[Hour].MEMBERS ON ROWS,
+  [Measures].[Injuries Fatal] ON COLUMNS
+FROM [Traffic Accidents DW]
+
+
+--- Tỉ lệ tử vong của các vụ tai nạn qua các năm có giảm hay không?
+SELECT 
+  { [Measures].[Injuries Fatal], [Measures].[Tổng số vụ tai nạn - Fact Cause], [Measures].[Tỷ lệ tử vong] } ON COLUMNS,
+  [Dim Date].[Year].[Year].MEMBERS ON ROWS
+FROM [Traffic Accidents DW]
+
+
+-- Tỉ lệ số người bị thương qua các năm
+
+SELECT 
+  { [Measures].[Injuries Total], [Measures].[Tổng số vụ tai nạn - Fact Cause], [Measures].[Tỉ lệ người bị thương] } ON COLUMNS,
+  [Dim Date].[Year].[Year].MEMBERS ON ROWS
+FROM [Traffic Accidents DW]
+
+--- tỉ lệ tử vong do các loại va chạm
+SELECT 
+  { [Measures].[Injuries Fatal], [Measures].[Tổng số vụ tai nạn - Fact Cause], [Measures].[Tỷ lệ tử vong] } ON COLUMNS,
+  [Dim Crash Type].[Crash Type].[Crash Type].MEMBERS ON ROWS
+FROM [Traffic Accidents DW]
+
+--- tỉ lệ người bị thương do các loại va chạm
+SELECT 
+  { [Measures].[Injuries Total], [Measures].[Tổng số vụ tai nạn - Fact Cause], [Measures].[Tỉ lệ người bị thương] } ON COLUMNS,
+  [Dim Crash Type].[Crash Type].[Crash Type].MEMBERS ON ROWS
+FROM [Traffic Accidents DW]

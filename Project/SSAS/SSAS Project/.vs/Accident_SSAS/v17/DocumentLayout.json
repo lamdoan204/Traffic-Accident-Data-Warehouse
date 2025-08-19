@@ -1,0 +1,72 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Nam3\\HK2\\KhoDuLieu\\Accident_SSAS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7CF14492-59D2-4F5A-A823-04926D337366}|Accident_SSAS\\Accident_SSAS.dwproj|D:\\Nam3\\HK2\\KhoDuLieu\\Accident_SSAS\\Accident_SSAS\\Traffic Accidents DW.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{7CF14492-59D2-4F5A-A823-04926D337366}|Accident_SSAS\\Accident_SSAS.dwproj|solutionrelative:Accident_SSAS\\Traffic Accidents DW.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CF14492-59D2-4F5A-A823-04926D337366}|Accident_SSAS\\Accident_SSAS.dwproj|D:\\Nam3\\HK2\\KhoDuLieu\\Accident_SSAS\\Accident_SSAS\\Traffic Accidents DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{7CF14492-59D2-4F5A-A823-04926D337366}|Accident_SSAS\\Accident_SSAS.dwproj|solutionrelative:Accident_SSAS\\Traffic Accidents DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Traffic Accidents DW.cube [Design]",
+              "DocumentMoniker": "D:\\Nam3\\HK2\\KhoDuLieu\\Accident_SSAS\\Accident_SSAS\\Traffic Accidents DW.cube",
+              "RelativeDocumentMoniker": "Accident_SSAS\\Traffic Accidents DW.cube",
+              "ToolTip": "D:\\Nam3\\HK2\\KhoDuLieu\\Accident_SSAS\\Accident_SSAS\\Traffic Accidents DW.cube [Design]",
+              "RelativeToolTip": "Accident_SSAS\\Traffic Accidents DW.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T12:26:40.581Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Traffic Accidents DW.dsv [Design]",
+              "DocumentMoniker": "D:\\Nam3\\HK2\\KhoDuLieu\\Accident_SSAS\\Accident_SSAS\\Traffic Accidents DW.dsv",
+              "RelativeDocumentMoniker": "Accident_SSAS\\Traffic Accidents DW.dsv",
+              "ToolTip": "D:\\Nam3\\HK2\\KhoDuLieu\\Accident_SSAS\\Accident_SSAS\\Traffic Accidents DW.dsv [Design]",
+              "RelativeToolTip": "Accident_SSAS\\Traffic Accidents DW.dsv [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T12:26:28.319Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
