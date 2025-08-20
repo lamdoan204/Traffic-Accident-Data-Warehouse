@@ -1,40 +1,68 @@
-#  Traffic Accident Data Warehouse
+# Traffic Accident Data Warehouse
 
-##  Giới thiệu
-Dự án này xây dựng **Data Warehouse** cho dữ liệu tai nạn giao thông dựa trên phương pháp **Kimball Dimensional Modeling**.  
-Mục tiêu:
-- Thu thập, lưu trữ và tổ chức dữ liệu tai nạn giao thông từ Kaggle.
-- Cung cấp cấu trúc **Fact & Dimension** tối ưu cho việc phân tích.
-- Hỗ trợ các truy vấn OLAP và phân tích báo cáo (sử dụng T-SQL/MDX).
-## Quy trình
-### 1. Sử dụng file excel Detailed-Dimensional-Modeling-Workbook-KimballU.xlsm để thiết kế DataWarehouse, generate code SQL
-####  Data Warehouse Schema
+## 📌 Introduction
+This project builds a **Data Warehouse** for traffic accident data based on the **Kimball Dimensional Modeling** approach.  
 
-#####  Fact Tables
+**Objectives:**
+- Collect, store, and organize traffic accident data from Kaggle.
+- Provide an optimized **Fact & Dimension** structure for analysis.
+- Support OLAP queries and reporting analysis (using T-SQL/MDX).
+
+---
+
+## 📑 Table of Contents
+- [Introduction](#-introduction)
+- [Process](#-process)
+  - [1. Data Warehouse Design](#1-data-warehouse-design)
+  - [2. ETL Process](#2-etl-process)
+  - [3. OLAP & Visualization](#3-olap--visualization)
+- [Project Structure](#-project-structure)
+- [Installation & Usage](#-installation--usage)
+- [Technologies Used](#-technologies-used)
+
+---
+
+## 🔧 Process
+
+### 1. Data Warehouse Design
+Using the file **Detailed-Dimensional-Modeling-Workbook-KimballU.xlsm** to design the Data Warehouse and generate SQL code.
+
+#### Data Warehouse Schema
+**Fact Tables**
 - `FactTime`: facts about crash time
 - `FactCause`: facts related to crash causes
 
-#####  Dimension Tables
+**Dimension Tables**
 - `DimDate`
 - `DimCrashType`
 - `DimLighting`
 - `DimWeather`
 - `DimTrafficControl`
 - `DimAudit`
----  
-### 2. Quá trình ETL
-   Import data CSV into database được đặt tên Dataset
-   Tạo database TrafficAccidents để sinh khóa cho các thuộc tính (T-SQL/1.CreateTables.sql)
-   Import dữ liệu từ Dataset sang TrafficAccidents (T-SQL/2.LoadDatasetIntoTables.sql)
-   Tạo DataWarehouse (T-SQL/3.CreateTrafficAccidentDW.sql)
-   - ETL bằng T-SQL
-     + Staging (T-SQL/4.Staging.sql)
-     + Loading (T-SQL/5.Loading.sql)
-    
-   - ETL bằng SSIS
-SSIS Packages Overview
 
-The project includes 4 main SSIS packages, each representing a specific stage in the ETL process:
+---
+
+### 2. ETL Process
+- Import CSV data into the database named **Dataset**  
+- Create the **TrafficAccidents** database to generate keys for the attributes  
+  - Script: `T-SQL/1.CreateTables.sql`  
+- Import data from **Dataset** into **TrafficAccidents**  
+  - Script: `T-SQL/2.LoadDatasetIntoTables.sql`  
+- Create **Data Warehouse**  
+  - Script: `T-SQL/3.CreateTrafficAccidentDW.sql`  
+
+**ETL using T-SQL**
+- Staging → `T-SQL/4.Staging.sql`  
+- Loading → `T-SQL/5.Loading.sql`  
+
+**ETL using SSIS**
+
+📌 **Role of SSIS in ETL**  
+- **Extract:** Connect to sources (CSV, Excel, SQL Server, …) to retrieve input data. In this project, the initial data source is the CSV file TrafficAcidents.csv.
+- **Transform:** Data cleaning & processing (data type conversion, encoding normalization, date splitting, surrogate key creation, SCD management).  
+- **Load:** Load processed data into DW (Stage → DW).  
+
+**SSIS Packages Overview**
 
 | Package                                 | Description                                            |
 | --------------------------------------- | ------------------------------------------------------ |
@@ -43,15 +71,14 @@ The project includes 4 main SSIS packages, each representing a specific stage in
 | `03_load_source_to_stage.dtsx`          | Prepare cleaned, joined data for DW                    |
 | `04_load_stage_to_dwh.dtsx`             | Final load into DW with surrogate keys, SCD, and audit |
 
-+ Open `traffic-warehouse-project.sln` in Visual Studio with SSIS extension
-+ Configure the following Connection Managers:
-  - `CSV_TrafficAccidents.conmgr`
-  - `Traffic_Source.conmgr`
-  - `Traffic_Stage.conmgr`
-  - `Traffic_DW.conmgr`
-+ Run the packages in order:  
-  `01` → `02` → `03` → `04`
-### 3. Thực hiện truy vấn với OLAP và trực quan hóa với PowerBI
-- Use SSAS tool (SQL Server Analysis Service in Visual Studio) to create OLAP cube and execute query
-- Use PowerBI to visualize charts for analysis
+Run in order: `01` → `02` → `03` → `04`
 
+---
+
+### 3. OLAP & Visualization
+- Use **SSAS** (SQL Server Analysis Services in Visual Studio) to create OLAP cubes and run queries.  
+- Use **PowerBI** to visualize charts for analysis.  
+
+---
+
+## 📂 Project Structure
