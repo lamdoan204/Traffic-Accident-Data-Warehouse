@@ -16,8 +16,6 @@ This project builds a **Data Warehouse** for traffic accident data based on the 
   - [1. Data Warehouse Design](#1-data-warehouse-design)
   - [2. ETL Process](#2-etl-process)
   - [3. OLAP & Visualization](#3-olap--visualization)
-- [Project Structure](#-project-structure)
-- [Installation & Usage](#-installation--usage)
 
 
 ---
