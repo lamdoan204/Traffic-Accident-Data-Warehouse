@@ -18,7 +18,7 @@ This project builds a **Data Warehouse** for traffic accident data based on the 
   - [3. OLAP & Visualization](#3-olap--visualization)
 - [Project Structure](#-project-structure)
 - [Installation & Usage](#-installation--usage)
-- [Technologies Used](#-technologies-used)
+
 
 ---
 
